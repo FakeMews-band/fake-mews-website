@@ -1,0 +1,61 @@
+.about {
+  padding: 100px 20px;
+  background: radial-gradient(circle at 10% 10%, rgba(0,179,255,0.05), transparent 50%),
+              radial-gradient(circle at 90% 80%, rgba(255,45,104,0.04), transparent 60%),
+              #050509;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.about.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-title {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00b3ff, #ff2d68);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0,179,255,0.3);
+}
+
+.about-desc {
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.muse-highlight {
+  color: #00b3ff;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,179,255,0.5);
+}
+
+.about-members {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.member-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 25px 40px;
+  width: 220px;
+  transition: 0.3s;
+}
+
+.member-card:hover {
+  border-color: rgba(0,179,255,0.4);
+  box-shadow: 0 0 15px rgba(0,179,255,0.2);
+  transform: scale(1.05);
+}
