@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/fake-mews-website/static/css/main.507fcdb5.css",
+    "main.js": "/fake-mews-website/static/js/main.c9d15905.js",
+    "index.html": "/fake-mews-website/index.html",
+    "main.507fcdb5.css.map": "/fake-mews-website/static/css/main.507fcdb5.css.map",
+    "main.c9d15905.js.map": "/fake-mews-website/static/js/main.c9d15905.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.507fcdb5.css",
+    "static/js/main.c9d15905.js"
+  ]
+}
