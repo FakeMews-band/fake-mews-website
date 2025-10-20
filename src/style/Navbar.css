@@ -1,0 +1,108 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: rgba(10, 10, 20, 0.5);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(10, 10, 20, 0.85);
+  box-shadow: 0 0 20px rgba(0, 179, 255, 0.2);
+}
+
+.nav-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #00b3ff, #ff2d68);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* === NAV LINKS === */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-family: "Orbitron", sans-serif;
+  text-transform: uppercase;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #00b3ff, 0 0 20px #ff2d68;
+}
+
+/* === BURGER MENU === */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.burger span {
+  height: 2.5px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 90px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background: rgba(5, 5, 15, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transform: translateX(100%);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+}
