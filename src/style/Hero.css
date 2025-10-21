@@ -22,11 +22,18 @@
 }
 
 .hero-title {
+  font-family: 'Orbitron', sans-serif;
   font-size: 4rem;
+  color: #fff;
+  border: 2px solid transparent;
+  border-image: linear-gradient(90deg, #00bfff, #ff3cac) 1;
+  display: inline-block;
+  padding: 0.4em 0.8em;
+  letter-spacing: 2px;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
   margin: 0;
-  background: linear-gradient(90deg, #00b3ff, #ff2d68);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-shadow: 0 0 30px rgba(0,179,255,0.4);
 }
 
