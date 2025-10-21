@@ -16,3 +16,30 @@ html {
   scroll-behavior: smooth;
 }
 
+section {
+  position: relative;
+  padding: 100px 0;
+}
+
+/* === Barre néon animée entre les sections === */
+section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #00ffff, #ff004f, transparent);
+  background-size: 200% 100%;
+  animation: scanMove 12s linear infinite;
+  filter: blur(4px);
+}
+
+@keyframes scanMove {
+  0% { background-position: 200% 0; opacity: 0.8; }
+  100% { background-position: -200% 0; opacity: 1; }
+}
+/* On évite le trait sous la dernière section */
+section:last-of-type::after {
+  display: none;
+}
