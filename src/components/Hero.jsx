@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../style/Hero.css";
 
+import Background from "./Background.jsx";
+
 export default function Hero() {
 
   const [visible, setVisible] = useState(false);
@@ -11,6 +13,7 @@ export default function Hero() {
 
   return (
     <section className={`hero ${visible ? "visible" : ""}`} id="hero">
+      <Background />
       <div className="hero-content">
         <h1 className="hero-title">Fake Mews</h1>
         <p className="hero-subtitle">A Tribute to Muse</p>
