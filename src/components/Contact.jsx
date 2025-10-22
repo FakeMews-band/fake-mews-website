@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../style/Contact.css";
 
+import emailjs from "emailjs-com";
+
+
 export default function Contact() {
   const sectionRef = useRef(null);
   const [sent, setSent] = useState(false);
@@ -18,17 +21,33 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Ici on ajoutera EmailJS plus tard
-    setSent(true);
-    e.target.reset();
-    setTimeout(() => setSent(false), 4000);
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  emailjs
+    .sendForm(
+      "service_1xapzkv",    // Service ID
+      "template_77em1w5",   // Template ID
+      form,
+      "F9Z3f1otxAJLKNck9"      // Clé publique
+    )
+    .then(() => {
+      setSent(true);
+      form.reset();
+      setTimeout(() => setSent(false), 4000);
+    })
+    .catch((error) => {
+      console.error("Erreur EmailJS :", error);
+      alert("Une erreur est survenue. Réessayez plus tard !");
+    });
+};
+
 
   return (
     <section ref={sectionRef} className="contact" id="contact">
-      <h2 className="contact-title">Contact & Booking</h2>
+      <h2 className="contact-title">Contact</h2>
       <p className="contact-subtitle">
         Pour toute demande de concert, collaboration ou information, contactez-nous.
       </p>
