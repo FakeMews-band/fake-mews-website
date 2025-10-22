@@ -8,7 +8,7 @@ export default function Hero() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setVisible(true), 200); // petit délai pour un effet smooth
+    setTimeout(() => setVisible(true), 200); 
   }, []);
 
   return (
